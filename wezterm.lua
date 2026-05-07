@@ -7,11 +7,16 @@ local smart = require('smart-splits')
 config.color_scheme = 'OneDark (base16)'
 
 config.font = wezterm.font('Fantasque Sans Mono')
-config.font_size = 14.0
+config.font_size = 11.0
 -- config.window_background_opacity = 0.95
 
 config.check_for_updates = false
 config.hide_tab_bar_if_only_one_tab = true
+
+config.animation_fps = 240
+config.max_fps = 240
+config.use_ime = false
+config.enable_wayland = false
 
 config.leader = { key = '\\', mods = 'ALT', timeout_milliseconds = 1000 }
 config.keys = {
