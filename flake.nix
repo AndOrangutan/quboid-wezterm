@@ -23,6 +23,16 @@
       paths = [
         wezterm-source.packages.${system}.default
       ] ++ deps;
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        mkdir -p $out/share/wezterm
+        cp ${./wezterm.lua} $out/share/wezterm/wezterm.lua
+        cp ${./smart-splits.lua} $out/share/wezterm/smart-splits.lua
+        wrapProgram $out/bin/wezterm \
+          --set WEZTERM_CONFIG_FILE $out/share/wezterm/wezterm.lua
+        wrapProgram $out/bin/wezterm-gui \
+          --set WEZTERM_CONFIG_FILE $out/share/wezterm/wezterm.lua
+      '';
     };
 
     devShells."${system}".default = pkgs.mkShell {

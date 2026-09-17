@@ -1,6 +1,7 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
+package.path = wezterm.config_dir .. '/?.lua;' .. package.path
 local smart = require('smart-splits')
 
 -- https://wezterm.org/colorschemes/index.html
