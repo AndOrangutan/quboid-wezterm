@@ -15,6 +15,7 @@
 
     deps = with pkgs; [
       fantasque-sans-mono
+        libglvnd
     ];
 
   in {
