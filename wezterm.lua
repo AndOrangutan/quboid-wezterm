@@ -1,7 +1,7 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
-config.front_end = "OpenGL"
+config.front_end = "Software"
 
 package.path = wezterm.config_dir .. '/?.lua;' .. package.path
 local smart = require('smart-splits')
